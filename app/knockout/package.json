@@ -1,18 +1,18 @@
 {
-  "name": "@storybook/framework",
+  "name": "@storybook/knockout",
   "version": "0.0.1",
-  "description": "Storybook for framework: View framework components in isolation with hot reloading.",
+  "description": "Storybook for KnockoutJS: View framework components in isolation with hot reloading.",
   "keywords": [
     "storybook",
     "framework"
   ],
-  "homepage": "https://github.com/storybookjs/framework/app/framework",
+  "homepage": "https://github.com/storybookjs/framework/app/knockout",
   "bugs": {
-    "url": "https://github.com/storybookjs/framework/issues"
+    "url": "https://github.com/storybookjs/knockout/issues"
   },
   "repository": {
     "type": "git",
-    "directory": "app/framework"
+    "directory": "app/knockout"
   },
   "license": "MIT",
   "files": [

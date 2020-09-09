@@ -1,6 +1,6 @@
 {
-  "name": "storybook-framework",
-  "version": "0.0.0",
+  "name": "storybook-knockout",
+  "version": "0.0.1",
   "private": true,
   "description": "",
   "main": "index.js",
