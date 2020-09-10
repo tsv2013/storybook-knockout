@@ -2,9 +2,19 @@ import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
+import { register as registerButton } from '../components/button';
+registerButton();
+
+import template from './sbt-button.html';
+
 export default {
   title: 'Demo',
 };
+
+export const KnockoutButton = () =>
+  '<sbt-button params="action: function() { alert(); }"></sbt-button>';
+
+export const ButtonTemplate = () => template;
 
 export const Heading = () => '<h1>Hello World</h1>';
 export const Headings = () =>

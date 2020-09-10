@@ -2,6 +2,8 @@ import { document, Node } from 'global';
 import dedent from 'ts-dedent';
 import { RenderMainArgs } from './types';
 
+import * as ko from 'knockout';
+
 const rootElement = document.getElementById('root');
 
 export default function renderMain({
@@ -15,8 +17,13 @@ export default function renderMain({
   const element = storyFn();
 
   showMain();
+
+  ko.cleanNode(rootElement);
+  rootElement.knockout = ko;
+
   if (typeof element === 'string') {
     rootElement.innerHTML = element;
+    ko.applyBindings({}, rootElement);
   } else if (element instanceof Node) {
     // Don't re-mount the element if it didn't change and neither did the story
     if (rootElement.firstChild === element && forceRender === true) {
@@ -25,6 +32,7 @@ export default function renderMain({
 
     rootElement.innerHTML = '';
     rootElement.appendChild(element);
+    ko.applyBindings({}, rootElement);
   } else {
     showError({
       title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,
