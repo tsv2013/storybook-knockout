@@ -31,20 +31,21 @@
     "prepare": "node ../../scripts/prepare.js"
   },
   "dependencies": {
-    "@storybook/addons": "6.0.0-alpha.2",
-    "@storybook/core": "6.0.0-alpha.2",
-    "@storybook/client-api": "6.0.0-alpha.2",
-    "@types/webpack-env": "^1.15.0",
-    "@storybook/core-events": "6.0.0-alpha.2",
-    "@storybook/source-loader": "6.0.0-alpha.2",
+    "@storybook/addons": "6.0.21",
+    "@storybook/client-api": "6.0.21",
+    "@storybook/core": "6.0.21",
+    "@storybook/core-events": "6.0.21",
+    "@storybook/source-loader": "6.0.21",
     "@types/webpack": "^4.41.3",
-    "typescript": "^3.7.5",
+    "@types/webpack-env": "^1.15.0",
+    "babel-loader": "^8.0.6",
     "core-js": "^3.0.1",
     "global": "^4.3.2",
-    "babel-loader": "^8.0.6",
     "html-loader": "^0.5.5",
+    "npmlog": "^4.1.2",
     "regenerator-runtime": "^0.13.3",
-    "ts-dedent": "^1.1.0"
+    "ts-dedent": "^1.1.0",
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
     "babel-loader": "^7.0.0 || ^8.0.0"
@@ -54,5 +55,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6"
   }
 }

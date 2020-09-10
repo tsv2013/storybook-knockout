@@ -9,7 +9,7 @@ module.exports = {
     "@storybook/addon-jest",
     "@storybook/addon-knobs",
     "@storybook/addon-links",
-    "@storybook/addon-options",
+//    "@storybook/addon-options",
     "@storybook/addon-storysource",
     "@storybook/addon-viewport"
   ]
