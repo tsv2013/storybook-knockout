@@ -1,3 +1,3 @@
 import { window } from 'global';
 
-window.STORYBOOK_ENV = 'FRAMEWORK';
+window.STORYBOOK_ENV = 'KNOCKOUT';

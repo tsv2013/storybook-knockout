@@ -4,7 +4,7 @@
   "description": "Storybook for KnockoutJS: View framework components in isolation with hot reloading.",
   "keywords": [
     "storybook",
-    "framework"
+    "KnockoutJS"
   ],
   "homepage": "https://github.com/storybookjs/framework/app/knockout",
   "bugs": {

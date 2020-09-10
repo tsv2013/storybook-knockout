@@ -1,8 +1,8 @@
-# Storybook for framework
+# Storybook for KnockoutJS
 
 ---
 
-Storybook for framework is a UI development environment for your plain framework snippets.
+Storybook for KnockoutJS is a UI development environment for your plain KnockoutJS snippets.
 With it, you can visualize different states of your UI components and develop them interactively.
 
 ![Storybook Screenshot](https://github.com/storybookjs/storybook/blob/master/media/storybook-intro.gif)

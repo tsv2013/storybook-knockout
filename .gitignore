@@ -1,2 +1,3 @@
 node_modules
-app/framework/dist
+app/knockout/dist
+app/knockout/app

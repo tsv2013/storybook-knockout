@@ -1,4 +1,5 @@
-# Storybook Framework Boilerplate
-Boilerplate code for supporting a framework in Storybook
+# Storybook KnockoutJS Boilerplate
 
-This project was built based off of the storybook html app. To start adding your new framework, replace instances of the word framework with your framework name
+Boilerplate code for supporting a KnockoutJS in Storybook
+
+This project was built based off of the storybook html app. To start adding your new KnockoutJS, replace instances of the word KnockoutJS with your KnockoutJS name
