@@ -2,8 +2,9 @@ import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
-import { register as registerButton } from '../components/button';
-registerButton();
+import * as ko from 'knockout';
+
+export { ButtonViewModel } from '../components/button';
 
 import template from './sbt-button.html';
 
@@ -11,10 +12,14 @@ export default {
   title: 'Demo',
 };
 
-export const KnockoutButton = () =>
-  '<sbt-button params="action: function() { alert(); }"></sbt-button>';
+export const ButtonComponent = () => {
+  return {
+    ko: ko,
+    template: '<sbt-button params="action: function() { alert(); }"></sbt-button>',
+  };
+};
 
-export const ButtonTemplate = () => template;
+export const KnockoutBindings = () => template;
 
 export const Heading = () => '<h1>Hello World</h1>';
 export const Headings = () =>

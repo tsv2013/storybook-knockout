@@ -4,7 +4,9 @@ import { RenderMainArgs } from './types';
 
 import * as ko from 'knockout';
 
-const rootElement = document.getElementById('root');
+const storybookRootElement = document.getElementById('root');
+const rootElement = document.createElement('div');
+storybookRootElement.appendChild(rootElement);
 
 export default function renderMain({
   storyFn,
@@ -14,25 +16,36 @@ export default function renderMain({
   showError,
   forceRender,
 }: RenderMainArgs) {
-  const element = storyFn();
-
+  const storyContent = storyFn();
   showMain();
 
-  ko.cleanNode(rootElement);
-  rootElement.knockout = ko;
-
-  if (typeof element === 'string') {
-    rootElement.innerHTML = element;
+  if (typeof storyContent === 'string') {
+    ko.cleanNode(rootElement);
+    rootElement.innerHTML = storyContent;
     ko.applyBindings({}, rootElement);
-  } else if (element instanceof Node) {
+  } else if (storyContent instanceof Node) {
     // Don't re-mount the element if it didn't change and neither did the story
-    if (rootElement.firstChild === element && forceRender === true) {
+    if (rootElement.firstChild === storyContent && forceRender === true) {
       return;
     }
 
+    ko.cleanNode(rootElement);
     rootElement.innerHTML = '';
-    rootElement.appendChild(element);
+    rootElement.appendChild(storyContent);
     ko.applyBindings({}, rootElement);
+  } else if (
+    'template' in storyContent &&
+    typeof storyContent.ko === 'object' &&
+    (typeof storyContent.template === 'string' || storyContent.template instanceof Node)
+  ) {
+    storyContent.ko.cleanNode(rootElement);
+    if (typeof storyContent.template === 'string') {
+      rootElement.innerHTML = storyContent.template;
+    } else {
+      rootElement.innerHTML = '';
+      rootElement.appendChild(storyContent);
+    }
+    storyContent.ko.applyBindings(storyContent.context || {}, rootElement);
   } else {
     showError({
       title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,

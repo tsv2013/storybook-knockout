@@ -12,15 +12,11 @@ export class ButtonViewModel {
   css = ko.observable('sbt-button');
 }
 
-export function register() {
-  if (!ko.components.isRegistered('sbt-button')) {
-    ko.components.register('sbt-button', {
-      viewModel: {
-        createViewModel: (params: any, componentInfo: any) => {
-          return new ButtonViewModel();
-        },
-      },
-      template: template,
-    });
-  }
-}
+ko.components.register('sbt-button', {
+  viewModel: {
+    createViewModel: (params: any, componentInfo: any) => {
+      return new ButtonViewModel();
+    },
+  },
+  template: template,
+});

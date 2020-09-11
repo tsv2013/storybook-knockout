@@ -1,6 +1,12 @@
 import { StoryFn } from '@storybook/addons';
 
-export type StoryFnHtmlReturnType = string | Node;
+export interface IKnockoutComponentStory {
+  ko: any;
+  template: string | Node;
+  context?: any;
+}
+
+export type StoryFnKnockoutReturnType = string | Node | IKnockoutComponentStory;
 
 export interface IStorybookStory {
   name: string;
@@ -18,7 +24,7 @@ export interface ShowErrorArgs {
 }
 
 export interface RenderMainArgs {
-  storyFn: () => StoryFn<StoryFnHtmlReturnType>;
+  storyFn: StoryFn<StoryFnKnockoutReturnType>;
   selectedKind: string;
   selectedStory: string;
   showMain: () => void;
