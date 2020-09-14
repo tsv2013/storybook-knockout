@@ -2,8 +2,6 @@ import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
-import * as ko from 'knockout';
-
 export { ButtonViewModel } from '../components/button';
 
 import template from './sbt-button.html';
@@ -14,8 +12,12 @@ export default {
 
 export const ButtonComponent = () => {
   return {
-    ko: ko,
-    template: '<sbt-button params="action: function() { alert(); }"></sbt-button>',
+    template: '<sbt-button params="action: action"></sbt-button>',
+    context: {
+      action: function () {
+        alert('!');
+      },
+    },
   };
 };
 

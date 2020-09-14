@@ -4,9 +4,7 @@ import { RenderMainArgs } from './types';
 
 import * as ko from 'knockout';
 
-const storybookRootElement = document.getElementById('root');
-const rootElement = document.createElement('div');
-storybookRootElement.appendChild(rootElement);
+const rootElement = document.getElementById('root');
 
 export default function renderMain({
   storyFn,
