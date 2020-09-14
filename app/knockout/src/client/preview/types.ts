@@ -1,7 +1,6 @@
 import { StoryFn } from '@storybook/addons';
 
 export interface IKnockoutComponentStory {
-  ko: any;
   template: string | Node;
   context?: any;
 }
@@ -30,4 +29,5 @@ export interface RenderMainArgs {
   showMain: () => void;
   showError: (args: ShowErrorArgs) => void;
   forceRender: boolean;
+  parameters: any;
 }

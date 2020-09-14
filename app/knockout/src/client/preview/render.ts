@@ -13,37 +13,39 @@ export default function renderMain({
   showMain,
   showError,
   forceRender,
+  parameters,
 }: RenderMainArgs) {
+  const knockoutInstance = (!!parameters.knockout && parameters.knockout.instance) || ko;
+
   const storyContent = storyFn();
   showMain();
 
   if (typeof storyContent === 'string') {
-    ko.cleanNode(rootElement);
+    knockoutInstance.cleanNode(rootElement);
     rootElement.innerHTML = storyContent;
-    ko.applyBindings({}, rootElement);
+    knockoutInstance.applyBindings({}, rootElement);
   } else if (storyContent instanceof Node) {
     // Don't re-mount the element if it didn't change and neither did the story
     if (rootElement.firstChild === storyContent && forceRender === true) {
       return;
     }
 
-    ko.cleanNode(rootElement);
+    knockoutInstance.cleanNode(rootElement);
     rootElement.innerHTML = '';
     rootElement.appendChild(storyContent);
-    ko.applyBindings({}, rootElement);
+    knockoutInstance.applyBindings({}, rootElement);
   } else if (
     'template' in storyContent &&
-    typeof storyContent.ko === 'object' &&
     (typeof storyContent.template === 'string' || storyContent.template instanceof Node)
   ) {
-    storyContent.ko.cleanNode(rootElement);
+    knockoutInstance.cleanNode(rootElement);
     if (typeof storyContent.template === 'string') {
       rootElement.innerHTML = storyContent.template;
     } else {
       rootElement.innerHTML = '';
       rootElement.appendChild(storyContent);
     }
-    storyContent.ko.applyBindings(storyContent.context || {}, rootElement);
+    knockoutInstance.applyBindings(storyContent.context || {}, rootElement);
   } else {
     showError({
       title: `Expecting an HTML snippet or DOM node from the story: "${selectedStory}" of "${selectedKind}".`,
