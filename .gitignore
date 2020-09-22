@@ -1,3 +1,4 @@
 node_modules
 app/knockout/dist
 app/knockout/app
+addons/storyshots/storyshots-core/dist/

@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "storybook": "start-storybook -p 9001"
   },
   "author": "",
@@ -20,11 +20,14 @@
     "@storybook/addon-jest": "6.0.21",
     "@storybook/addon-knobs": "6.0.21",
     "@storybook/addon-links": "6.0.21",
-    "@storybook/addon-storyshots": "6.0.21",
+    "@storybook/addon-storyshots": "file:../../addons/storyshots/storyshots-core",
     "@storybook/addon-storysource": "6.0.21",
     "@storybook/addon-viewport": "6.0.21",
     "chalk": "^3.0.0",
-    "shelljs": "^0.8.3"
+    "jest": "^26.1.0",
+    "jest-canvas-mock": "^2.2.0",
+    "shelljs": "^0.8.3",
+    "ts-jest": "^26.1.1"
   },
   "dependencies": {
     "knockout": "^3.5.1"

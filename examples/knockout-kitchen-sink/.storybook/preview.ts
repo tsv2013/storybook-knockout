@@ -3,9 +3,7 @@ import { withA11y } from '@storybook/addon-a11y';
 
 import * as ko from 'knockout';
 
-addDecorator(withA11y);
-
-addParameters({
+export const parameters = {
   a11y: {
     config: {},
     options: {
@@ -22,4 +20,4 @@ addParameters({
   docs: {
     iframeHeight: '200px',
   },
-});
+};
