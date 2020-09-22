@@ -1,13 +1,13 @@
-import { document } from 'global';
 import { action } from '@storybook/addon-actions';
 import { useEffect } from '@storybook/client-api';
 
-export { ButtonViewModel } from '../components/button';
+import { ButtonViewModel } from '../components/button';
 
 import template from './sbt-button.html';
 
 export default {
   title: 'Demo',
+  kocomponents: [ButtonViewModel],
 };
 
 export const ButtonComponent = () => {

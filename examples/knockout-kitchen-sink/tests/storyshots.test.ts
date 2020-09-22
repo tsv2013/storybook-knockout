@@ -1,7 +1,7 @@
 import initStoryshots from '@storybook/addon-storyshots';
 
 initStoryshots({
-  framework: <any>'knockout',
+  framework: 'knockout',
 });
 
 // test("one test", () => {
