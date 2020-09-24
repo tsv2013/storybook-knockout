@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@jest/transform": "^26.0.0",
-    "@storybook/addons": "6.1.0-alpha.14",
-    "@storybook/client-api": "6.1.0-alpha.14",
-    "@storybook/core": "6.1.0-alpha.14",
+    "@storybook/addons": "6.0.21",
+    "@storybook/client-api": "6.0.21",
+    "@storybook/core": "6.0.21",
     "@types/glob": "^7.1.1",
     "@types/jest": "^25.1.1",
     "@types/jest-specific-snapshot": "^0.5.3",
@@ -53,8 +53,8 @@
     "ts-dedent": "^1.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "6.1.0-alpha.14",
-    "@storybook/react": "6.1.0-alpha.14",
+    "@storybook/addon-docs": "6.0.21",
+    "@storybook/react": "6.0.21",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.4.1",
