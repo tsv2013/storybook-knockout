@@ -1,4 +1,5 @@
-import button from './button.html';
+const button = require('./button.html'); // At this moment I've not managed to make import work with jest
+// import button from './button.html';
 
 const packageName = './button.html';
 const componentSubtitle = `import button from '${packageName}/lib/elements/buttons';`;

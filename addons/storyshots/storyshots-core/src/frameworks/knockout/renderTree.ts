@@ -1,33 +1,30 @@
 import { document, Node } from 'global';
 
-function getRenderedTree(story: { render: () => any }) {
+function getRenderedTree(story: { render: () => any; parameters: any }) {
   const component = story.render();
+  const ko = story.parameters.knockout.instance;
 
   if (component instanceof Node) {
-    story.parameters.knockout.instance.applyBindings({}, component);
-    story.parameters.knockout.instance.tasks.runEarly();
+    ko.applyBindings({}, component);
+    ko.tasks.runEarly();
     return component;
   }
 
   const section: HTMLElement = document.createElement('section');
 
-  if(typeof component === "string") {
+  if (typeof component === 'string') {
     section.innerHTML = component;
-    story.parameters.knockout.instance.applyBindings({}, section);
-    story.parameters.knockout.instance.tasks.runEarly();
-    return section;
+    ko.applyBindings({}, section);
   } else {
     section.innerHTML = component.template;
-    story.parameters.knockout.instance.applyBindings(component.context || {}, section);
-    story.parameters.knockout.instance.tasks.runEarly();
-    return section;
-    // if (section.childElementCount > 1) {
-    // return section;
-    // }
+    ko.applyBindings(component.context || {}, section);
   }
 
+  ko.tasks.runEarly();
+  if (section.childElementCount > 1) {
+    return section;
+  }
   return section.firstChild;
-
 }
 
 export default getRenderedTree;

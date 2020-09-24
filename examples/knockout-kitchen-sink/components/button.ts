@@ -1,7 +1,10 @@
 import * as ko from 'knockout';
 
 import './button.css';
-import template from './button.html';
+const template = require('./button.html');
+// At this moment I've not managed to make import work with jest
+// import template from './button.html';
+// const template = '<button data-bind="text: title, click: action, css: css"></button>';
 // console.log(template);
 
 export class ButtonViewModel {

@@ -10,7 +10,8 @@ function test(options: StoryshotsOptions): boolean {
 function load(options: StoryshotsOptions) {
   global.STORYBOOK_ENV = 'knockout';
 
-  const storybook = jest.requireActual('@storybook/knockout');
+  const storybook = jest.requireActual('../../../../../../app/knockout');
+  // const storybook = jest.requireActual('@storybook/knockout');
 
   configure({ ...options, storybook });
 

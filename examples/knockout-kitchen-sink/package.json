@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@storybook/knockout": "file:../../app/knockout",
     "@storybook/addon-a11y": "6.0.21",
     "@storybook/addon-actions": "6.0.21",
     "@storybook/addon-backgrounds": "6.0.21",
@@ -23,6 +22,7 @@
     "@storybook/addon-storyshots": "file:../../addons/storyshots/storyshots-core",
     "@storybook/addon-storysource": "6.0.21",
     "@storybook/addon-viewport": "6.0.21",
+    "@storybook/knockout": "file:../../app/knockout",
     "chalk": "^3.0.0",
     "jest": "^26.1.0",
     "jest-canvas-mock": "^2.2.0",

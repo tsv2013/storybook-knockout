@@ -3,7 +3,8 @@ import { useEffect } from '@storybook/client-api';
 
 import { ButtonViewModel } from '../components/button';
 
-import template from './sbt-button.html';
+const template = require('./sbt-button.html'); // At this moment I've not managed to make import work with jest
+// import template from './sbt-button.html';
 
 export default {
   title: 'Demo',
@@ -21,7 +22,9 @@ export const ButtonComponent = () => {
   };
 };
 
-export const KnockoutBindings = () => template;
+export const KnockoutBindings = () => {
+  return template;
+};
 
 export const Heading = () => '<h1>Hello World</h1>';
 export const Headings = () =>

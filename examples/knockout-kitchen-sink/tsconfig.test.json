@@ -8,8 +8,9 @@
     "importHelpers": false,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
   },
   "exclude": ["node_modules/**/*.ts"],
-  "include": ["tests/**/*.ts", "components/**/*.ts"]
+  "include": ["tests/**/*.ts", "stories/**/*.ts", "components/**/*.ts"]
 }
