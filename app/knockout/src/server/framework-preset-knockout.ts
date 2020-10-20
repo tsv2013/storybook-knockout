@@ -9,6 +9,10 @@ export function webpack(config: Configuration) {
       rules: [
         ...config.module.rules,
         {
+          test: /\.(ts|tsx)$/,
+          loader: "ts-loader",
+        },
+        {
           test: /\.html$/,
           use: [
             {
